@@ -4,16 +4,20 @@
  <div class ="row">
      <div class="col-md-8 offset-md-2">
          <table class="table">
+              
                <thead >                  
                      <tr>
                  <th >@Html.DisplayNameFor(model=>model.ProfilePictureURL)</th>
                  <th >@Html.DisplayNameFor(model=>model.FullName)</th>
                  <th >@Html.DisplayNameFor(model=>model.Bio)</th>
                  <th >Actions</th>
+                 <th> <a asp-controller="Actor" asp-action="create" class="btn btn-outline-success" >Add Actor</a></th>
 
                    </tr>
              </thead>
              <tbody>
+                
+
                  @foreach (var item in Model)
                  {
                   <tr>
@@ -27,8 +31,8 @@
                          @Html.DisplayFor(modelitem=>item.Bio)
                      </td>
                      <td class="align-middle">
-                         <a class="btn btn-success">Edit</a>
-                         <a class="btn btn-primary">Details</a>
+                         <a class="btn btn-success" asp-action="Edit" asp-route-id=@item.Id>Edit</a>
+                         <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
                          <a class="btn btn-danger">Delete</a>
 
                      </td>

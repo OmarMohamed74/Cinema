@@ -1,44 +1,17 @@
 ﻿using eTickets.Models.Data;
+using eTickets.Models.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 
 namespace eTickets.Models.Services
 {
-    public class ActorService : IActorsService
+    public class ActorService :EntityBaseRepository<Actor>,IActorsService
     {
 
         private readonly AppDbContext _context;
 
-        public ActorService(AppDbContext context)
-        {
-            _context = context;
-        }
+        public ActorService(AppDbContext context):base(context){}
        
-        public void Create(Actor actor)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task< IEnumerable<Actor>> GetAllActors()
-        {
-            var AllActors = await _context.Actors.ToListAsync();
-            return AllActors;
-            
-        }
-
-        public Actor GetById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Actor Update(int Id, Actor NewActor)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

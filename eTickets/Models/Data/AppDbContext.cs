@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace eTickets.Models.Data
 {
@@ -21,6 +22,12 @@ namespace eTickets.Models.Data
         public virtual DbSet<Actor> Actors { get; set; }
         public virtual DbSet<Cinema> Cinemas { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
+
+        internal EntityEntry Entry<T>(object entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual DbSet<Producer> Producers { get; set; }
 
         public virtual DbSet<Actor_Movie> Actors_Movies { get; set; }

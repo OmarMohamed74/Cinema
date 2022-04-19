@@ -1,17 +1,10 @@
-﻿namespace eTickets.Models.Services
+﻿using eTickets.Models.Data.Repositories;
+using eTickets.Models;
+
+namespace eTickets.Models.Services
 {
-    public interface IActorsService
+    public interface IActorsService : IEntityBaseRepository<Actor>
     {
-        Task< IEnumerable<Actor>> GetAllActors();
-
-        Actor GetById(int Id);
-
-        void DeleteById(int Id);
-
-        Actor Update(int Id, Actor NewActor);
-
-        void Create(Actor actor);
-
-        
+       
     }
 }

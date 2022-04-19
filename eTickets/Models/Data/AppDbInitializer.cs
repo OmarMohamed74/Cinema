@@ -138,7 +138,7 @@ namespace eTickets.Models.Data
                             Name = "Life",
                             Description = "This is the Life movie description",
                             Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
+                            ImageURL = "~/assets/Movies/Movie1.jpg",
                             StartDate = DateTime.Now.AddDays(-10),
                             EndDate = DateTime.Now.AddDays(10),
                             CinemaId = 3,
